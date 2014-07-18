@@ -7,6 +7,7 @@ set tabstop=4 shiftwidth=4          " a tab is 4 spaces
 set autoindent
 set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
+set autochdir                       " Automagically change directory to open file
 
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
