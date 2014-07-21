@@ -36,3 +36,4 @@ set statusline+=\ %P            " percent through file
 "" File completion
 set wildmode=list:longest       " Complete the longest common match and show
                                 " a list of possible matches
+set wildignorecase 
