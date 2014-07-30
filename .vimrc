@@ -37,3 +37,13 @@ set statusline+=\ %P            " percent through file
 set wildmode=list:longest       " Complete the longest common match and show
                                 " a list of possible matches
 set wildignorecase 
+
+"" remaps
+"" brings matches to the center of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+
