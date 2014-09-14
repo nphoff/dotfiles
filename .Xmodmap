@@ -1,0 +1,4 @@
+clear mod4
+keycode 0x85 = Escape
+add mod4 = Hyper_L Super_R
+
