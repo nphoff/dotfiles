@@ -47,4 +47,4 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-nnoremap  ; :
+map  ; :
