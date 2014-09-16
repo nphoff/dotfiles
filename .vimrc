@@ -12,6 +12,11 @@ set autochdir                       " Automagically change directory to open fil
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
+""Show whitespace as other characters"
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
+
 "" Searching
 set nohlsearch                  " Search highlighting is super annoying
 set hlsearch                    " highlight matches
@@ -36,7 +41,7 @@ set statusline+=\ %P            " percent through file
 "" File completion
 set wildmode=list:longest       " Complete the longest common match and show
                                 " a list of possible matches
-set wildignorecase 
+set wildignorecase
 
 "" remaps
 "" brings matches to the center of the screen
@@ -47,4 +52,4 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-
+nnoremap  ; :
