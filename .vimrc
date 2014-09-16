@@ -12,11 +12,6 @@ set autochdir                       " Automagically change directory to open fil
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
-""Show whitespace as other characters"
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
-
-
 "" Searching
 set nohlsearch                  " Search highlighting is super annoying
 set hlsearch                    " highlight matches
