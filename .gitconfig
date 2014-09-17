@@ -1,0 +1,35 @@
+[user]
+	name = Nathan Hoffman
+	email = hoffman.nathan89@gmail.com
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+    autocrlf = input
+	editor = vim
+
+[alias]
+    st = status
+	lg = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset %s'
+    rpull = pull --rebase --stat
+
+[merge]
+    tool = vimdiff
+
