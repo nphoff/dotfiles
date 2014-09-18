@@ -48,3 +48,8 @@ nnoremap <silent> g* g*zz
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 map  ; :
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif
