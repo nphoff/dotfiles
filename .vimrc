@@ -1,13 +1,16 @@
 set nocompatible                    " choose no compatibility with legacy vi
 syntax enable                       " Turn on syntax highlighting
+set title                           " Change the terminal's title (?)
 set expandtab                       " use spaces, not tabs (optional)
 set relativenumber                  " count the relative line numbers from where you are
 set number                          " actually use line numbers
 set tabstop=4 shiftwidth=4          " a tab is 4 spaces
 set autoindent
+set shiftround                      " Indent to nearest tabstop.
 set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
+set noswapfile                      "Self explanatory, don't use swaps.
 
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
@@ -48,8 +51,11 @@ nnoremap <silent> g* g*zz
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 map  ; :
+nmap > >>
+nmap < <<
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
+
