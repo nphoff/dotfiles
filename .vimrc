@@ -11,6 +11,7 @@ set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
 set noswapfile                      "Self explanatory, don't use swaps.
+let g:netrw_liststyle=3             " netrw list style
 
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
@@ -58,4 +59,5 @@ nmap < <<
 if filereadable($HOME . "/.vimrc.local")
     source ~/.vimrc.local
 endif
+
 
