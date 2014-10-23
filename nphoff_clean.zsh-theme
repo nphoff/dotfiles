@@ -1,5 +1,5 @@
 # Theme based heavily on the clean theme from zshrc
-PROMPT='%{$fg_no_bold[cyan]%}%n%{$fg_no_bold[magenta]%}:%{$fg_no_bold[green]%}%3~ $(git_prompt_info)%{$reset_color%}%(!.#.$) '
+PROMPT='%{$fg_no_bold[cyan]%}%n%{$fg_no_bold[magenta]%}:%{$fg_no_bold[green]%}%5~ $(git_prompt_info)%{$reset_color%}%(!.#.$) '
 # git theming
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg_no_bold[yellow]%}%B"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%b%{$fg_bold[blue]%})%{$reset_color%} "
