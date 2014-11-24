@@ -1,4 +1,22 @@
 set nocompatible                    " choose no compatibility with legacy vi
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'tpope/vim-fugitive'
+
+
+ " All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 syntax enable                       " Turn on syntax highlighting
 set title                           " Change the terminal's title (?)
 set expandtab                       " use spaces, not tabs (optional)
@@ -12,8 +30,13 @@ set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
 set noswapfile                      "Self explanatory, don't use swaps.
 let g:netrw_liststyle=3             " netrw list style
+colorscheme default
 
-autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
+"Leader
+let mapleader = ","
+
+"autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre *.php,*.js :%s/\s\+$//e
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
@@ -54,6 +77,46 @@ noremap  <buffer> <silent> j gj
 map  ; :
 nmap > >>
 nmap < <<
+
+""" folding
+set foldmethod=syntax
+set foldlevelstart=20
+set foldnestmax=2
+
+let javaScript_fold=1         " JavaScript
+"let perl_fold=1               " Perl
+"let php_folding=1             " PHP
+"let r_syntax_folding=1        " R
+"let ruby_fold=1               " Ruby
+"let sh_fold_enabled=1         " sh
+"let vimsyn_folding='af'       " Vim script
+"let xml_syntax_folding=1      " XML
+"
+""" netrw settings
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_liststyle     = 2
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+let g:netrw_special_syntax= 1
+
+"" my function
+let g:journal_mode = 1
+function Journal()
+    let journal_time = strftime("%b_%d_%Y")
+    let filename = journal_time . '.md'
+    let path = '~/journal/'
+    if g:journal_mode
+        execute 'sp ' . path . filename
+        let g:journal_mode = 0
+    else
+        execute 'bd ' . path . filename 
+        let g:journal_mode = 1
+    endif
+endfunction
+
+nnoremap <leader>j :call Journal()<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
