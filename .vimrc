@@ -17,6 +17,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+"
 
 
  " All of your Plugins must be added before the following line
@@ -43,6 +45,7 @@ let mapleader = ","
 
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js :%s/\s\+$//e
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
