@@ -1,4 +1,26 @@
 set nocompatible                    " choose no compatibility with legacy vi
+
+" Vundle.
+" Reminder, before having vundle, you need to run this:
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" Might want a script at some point to do that first
+
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'tpope/vim-fugitive'
+
+
+ " All of your Plugins must be added before the following line
+call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable                       " Turn on syntax highlighting
