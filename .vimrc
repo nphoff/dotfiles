@@ -82,8 +82,8 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
+noremap j gj
+noremap k gk
 map  ; :
 nmap > >>
 nmap < <<
