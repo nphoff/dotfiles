@@ -67,8 +67,9 @@ set statusline+=%l/%L           " cursor line/total lines
 set statusline+=\ %P            " percent through file
 
 "" File completion
-set wildmode=list:longest       " Complete the longest common match and show
-                                " a list of possible matches
+set wildmenu
+set wildmode=list:longest
+set wildignore=.git,*.swp,*/tmp/*
 set wildignorecase
 
 "" remaps
@@ -123,6 +124,7 @@ function Journal()
 endfunction
 
 nnoremap <leader>j :call Journal()<CR>
+set pastetoggle=<leader>p
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
