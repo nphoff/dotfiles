@@ -46,6 +46,7 @@ let mapleader = ","
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set spell spelllang=en_us
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
