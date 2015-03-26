@@ -13,12 +13,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 "
 
 
@@ -38,6 +40,7 @@ set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
 set noswapfile                      "Self explanatory, don't use swaps.
+set cursorline
 let g:netrw_liststyle=3             " netrw list style
 colorscheme default
 
@@ -45,7 +48,7 @@ colorscheme default
 let mapleader = ","
 
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd BufWritePre *.php,*.js :%s/\s\+$//e
+autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md set spell spelllang=en_us
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
