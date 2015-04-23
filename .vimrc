@@ -93,6 +93,11 @@ map  ; :
 nmap > >>
 nmap < <<
 
+"" don't look, emacs bindings :/
+noremap <C-a> ^
+noremap <C-e> $
+
+
 """ folding
 set foldmethod=syntax
 set foldlevelstart=20
