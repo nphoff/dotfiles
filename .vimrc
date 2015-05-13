@@ -21,6 +21,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mileszs/ack.vim'
 "
 
 
@@ -135,6 +136,8 @@ function Journal()
     endif
 endfunction
 
+"nnoremap <leader>s :Ag<CR>
+nnoremap <leader>s :Ggrep <cword> *<CR>
 nnoremap <leader>j :call Journal()<CR>
 set pastetoggle=<leader>p
 
