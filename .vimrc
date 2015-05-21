@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
+Plugin 'ervandew/supertab'
 "
 
 
