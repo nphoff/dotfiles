@@ -45,6 +45,7 @@ set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
 set noswapfile                      "Self explanatory, don't use swaps.
 set cursorline
+set mouse=a
 let g:netrw_liststyle=3             " netrw list style
 colorscheme default
 
