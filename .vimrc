@@ -28,6 +28,7 @@ let mapleader = ","
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=2 shiftwidth=2
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
@@ -54,7 +55,7 @@ set statusline+=\ %P            " percent through file
 "" File completion
 set wildmenu
 set wildmode=list:longest
-set wildignore=.git,*.swp,*/tmp/*
+set wildignore=.git,*.swp,*/tmp/*,*/dist/*
 set wildignorecase
 
 "" remaps

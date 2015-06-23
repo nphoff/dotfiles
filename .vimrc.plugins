@@ -23,8 +23,15 @@ Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/webapi-vim'
 Plugin 'nphoff/hound.vim'
+Plugin 'kien/ctrlp.vim'
 "
 
  " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"" ctrlp
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 0
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
