@@ -1,36 +1,9 @@
 set nocompatible                    " choose no compatibility with legacy vi
 
-" Vundle.
-" Reminder, before having vundle, you need to run this:
-" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Might want a script at some point to do that first
-
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-" Plugin 'jelera/vim-javascript-syntax'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'mileszs/ack.vim'
-Plugin 'ervandew/supertab'
-Plugin 'mattn/webapi-vim'
-Plugin 'nphoff/hound.vim'
-"
-
-
- " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" All of my plugins are here.
+if filereadable($HOME . "/.vimrc.plugins")
+    source ~/.vimrc.plugins
+endif
 
 syntax enable                       " Turn on syntax highlighting
 set title                           " Change the terminal's title (?)
