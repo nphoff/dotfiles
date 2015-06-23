@@ -93,7 +93,6 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 noremap j gj
 noremap k gk
-map  ; :
 nmap > >>
 nmap < <<
 
