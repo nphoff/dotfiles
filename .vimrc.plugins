@@ -22,8 +22,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'mattn/webapi-vim'
-Plugin 'nphoff/hound.vim'
+Plugin 'urthbound/hound.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'unblevable/quick-scope'
 "
 
  " All of your Plugins must be added before the following line
@@ -35,3 +36,28 @@ let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
+
+"quick scope
+" Only show quick-scope highlights after f/F/t/T is pressed
+function! Quick_scope_selective(movement)
+    let needs_disabling = 0
+    if !g:qs_enable
+        QuickScopeToggle
+        redraw
+        let needs_disabling = 1
+    endif
+
+    let letter = nr2char(getchar())
+
+    if needs_disabling
+        QuickScopeToggle
+    endif
+
+    return a:movement . letter
+endfunction
+
+let g:qs_enable = 0
+
+for i in  [ 'f', 'F', 't', 'T' ]
+    execute 'noremap <expr> <silent>' . i . " Quick_scope_selective('". i . "')"
+endfor
