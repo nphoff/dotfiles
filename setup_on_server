@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # will copy over barebones files to a server.
 
 SERVER=$1
