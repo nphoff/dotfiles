@@ -3,7 +3,6 @@ if [ -e $HOME/.zshrc.local ]; then
     source $HOME/.zshrc.local;
 fi
 
-bindkey -v
 export KEYTIMEOUT=1
 
 export GIT_EDITOR=vim
