@@ -8,7 +8,6 @@ endif
 syntax enable                       " Turn on syntax highlighting
 set title                           " Change the terminal's title (?)
 set expandtab                       " use spaces, not tabs (optional)
-set relativenumber                  " count the relative line numbers from where you are
 set number                          " actually use line numbers
 set tabstop=4 shiftwidth=4          " a tab is 4 spaces
 set autoindent
@@ -20,6 +19,8 @@ set noswapfile                      "Self explanatory, don't use swaps.
 set cursorline
 set mouse=a
 let g:netrw_liststyle=3             " netrw list style
+" take out the included files, it was taking too long
+set complete=.,w,b,u,t
 colorscheme default
 
 "Leader
@@ -56,7 +57,6 @@ set statusline+=\ %P            " percent through file
 set wildmenu
 set wildmode=list:longest
 set wildignore=.git,*.swp,*/tmp/*,*/dist/*
-set wildignorecase
 
 "" remaps
 "" brings matches to the center of the screen
@@ -79,6 +79,12 @@ noremap <C-e> $
 set foldmethod=syntax
 set foldlevelstart=20
 set foldnestmax=2
+
+""" new things
+if v:version >= 704
+    set wildignorecase
+    set relativenumber                  " count the relative line numbers from where you are
+endif
 
 let javaScript_fold=1         " JavaScript
 "let perl_fold=1               " Perl
