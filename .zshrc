@@ -19,6 +19,9 @@ export LANGUAGE=en_US.UTF-8
 alias e='emacs'
 alias v='vim'
 
+#start blogging
+alias blog='cd ~/coding/ghost-0.7.1; nohup npm start &;'
+
 #Ease of changing directories:
 alias ..='cd ..'
 alias ..2='cd ../..'

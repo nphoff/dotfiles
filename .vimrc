@@ -23,6 +23,12 @@ let g:netrw_liststyle=3             " netrw list style
 set complete=.,w,b,u,t
 colorscheme default
 
+" Change shape of cursor in different modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical line in insert mode
+let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+
+set scrolloff=3
+
 "Leader
 let mapleader = ","
 
@@ -30,6 +36,7 @@ let mapleader = ","
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufReadPost *.jinja2 set filetype=html tabstop=2 shiftwidth=2
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
