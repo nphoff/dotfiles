@@ -127,7 +127,8 @@ function Journal()
 endfunction
 
 "nnoremap <leader>s :Ag<CR>
-nnoremap <leader>s :Ggrep <cword> *<CR>
+" nnoremap <leader>s :Ggrep <cword> *<CR>
+nnoremap <Leader>w :w<CR>
 nnoremap <leader>j :call Journal()<CR>
 set pastetoggle=<leader>p
 
