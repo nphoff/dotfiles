@@ -30,7 +30,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 set scrolloff=3
 
 "Leader
-let mapleader = ","
+let mapleader = "\<Space>"
 
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
