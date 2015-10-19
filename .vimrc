@@ -9,7 +9,9 @@ syntax enable                       " Turn on syntax highlighting
 set title                           " Change the terminal's title (?)
 set expandtab                       " use spaces, not tabs (optional)
 set number                          " actually use line numbers
-set tabstop=4 shiftwidth=4          " a tab is 4 spaces
+set tabstop=4 
+set shiftwidth=4 
+set softtabstop=4                   " a tab is 4 spaces
 set autoindent
 set shiftround                      " Indent to nearest tabstop.
 set backspace=indent,eol,start
@@ -83,7 +85,9 @@ noremap <C-e> $
 
 
 """ folding
+set foldenable
 set foldmethod=syntax
+"set foldmethod=indent "testing for a bit
 set foldlevelstart=20
 set foldnestmax=2
 
