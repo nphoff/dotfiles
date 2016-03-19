@@ -17,8 +17,8 @@ set shiftround                      " Indent to nearest tabstop.
 set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
-set noswapfile                      "Self explanatory, don't use swaps.
-set cursorline
+set noswapfile                      " Self explanatory, don't use swaps.
+set cursorline                      " Put a line under the current row...
 set mouse=a
 let g:netrw_liststyle=3             " netrw list style
 " take out the included files, it was taking too long
@@ -42,7 +42,6 @@ autocmd BufNewFile,BufReadPost *.jinja2 set filetype=html tabstop=2 shiftwidth=2
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
-set nohlsearch                  " Search highlighting is super annoying
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...

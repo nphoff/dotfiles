@@ -23,6 +23,7 @@ Plugin 'ervandew/supertab'
 Plugin 'mattn/webapi-vim'
 Plugin 'urthbound/hound.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'fatih/vim-go'
 "
 
  " All of your Plugins must be added before the following line
@@ -36,4 +37,7 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 
 nnoremap <Leader>o :CtrlP<CR>
+
+"" nerdtree
+map <C-n> :NERDTreeToggle<CR>
 

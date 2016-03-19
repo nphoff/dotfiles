@@ -33,9 +33,13 @@ alias ..7='cd ../../../../../../..'
 alias ..8='cd ../../../../../../../..'
 alias ..9='cd ../../../../../../../../..'
 
+#to_read
+alias toread='v ~/to_read.txt'
 
 #tmux
 alias tma='tmux attach || tmux'
 alias tmrm='tmux kill-session -t'
 alias tmat='tmux attach -t'
 alias tmn='tmux new -s'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
