@@ -8,7 +8,7 @@
 
 dir=$(pwd);
 
-for file in .tmux.conf .zshrc .vimrc.plugins .vimrc .xinitrc
+for file in .tmux.conf .zshrc .vimrc.plugins .vimrc .xinitrc .gitconfig
 do
 
 if [ -e ~/$file ]; then
