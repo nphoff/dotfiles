@@ -31,7 +31,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 
 set scrolloff=3
 
-"Leader
+" Leader
 let mapleader = ","
 
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -75,6 +75,7 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 noremap j gj
 noremap k gk
+noremap s <C-w>
 nmap > >>
 nmap < <<
 
