@@ -83,6 +83,10 @@ nmap < <<
 noremap <C-a> ^
 noremap <C-e> $
 
+"" experimental settings for page nav
+noremap J <C-f>
+noremap K <C-b>
+
 
 """ folding
 set foldenable
@@ -130,10 +134,24 @@ function Journal()
     endif
 endfunction
 
+let g:notes = 1
+function Notes()
+    let filename = 'notes.md'
+    let path = '~/journal/'
+    if g:notes
+        execute 'sp ' . path . filename
+        let g:notes = 0
+    else
+        execute 'bd ' . path . filename 
+        let g:notes = 1
+    endif
+endfunction
+
 "nnoremap <leader>s :Ag<CR>
 " nnoremap <leader>s :Ggrep <cword> *<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <leader>j :call Journal()<CR>
+nnoremap <leader>n :call Notes()<CR>
 set pastetoggle=<leader>p
 
 " Local config
