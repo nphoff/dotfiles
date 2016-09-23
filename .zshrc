@@ -19,6 +19,7 @@ export LANGUAGE=en_US.UTF-8
 alias e='emacs'
 alias v='vim'
 alias g='git'
+alias vf='vim $(fzf)'
 
 #start blogging
 alias blog='cd ~/coding/ghost-0.7.1; nohup npm start &;'
@@ -44,3 +45,5 @@ alias tmat='tmux attach -t'
 alias tmn='tmux new -s'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
