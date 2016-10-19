@@ -97,6 +97,7 @@ set foldnestmax=2
 
 " requires fzf to be installed on the system (highly recommended)
 noremap <leader>s :FZF ~/development/Etsyweb<CR>
+noremap <leader>e :FZF<CR>
 
 """ new things
 if v:version >= 704
