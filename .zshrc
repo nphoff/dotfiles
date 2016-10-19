@@ -17,7 +17,7 @@ export LANGUAGE=en_US.UTF-8
 
 #ALIASES!
 alias e='emacs'
-alias v='vim'
+alias v='vim -O'
 alias g='git'
 alias vf='vim $(fzf)'
 

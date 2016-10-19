@@ -95,6 +95,9 @@ set foldmethod=syntax
 set foldlevelstart=20
 set foldnestmax=2
 
+" requires fzf to be installed on the system (highly recommended)
+noremap <leader>s :FZF ~/development/Etsyweb<CR>
+
 """ new things
 if v:version >= 704
     set wildignorecase
@@ -147,8 +150,6 @@ function Notes()
     endif
 endfunction
 
-"nnoremap <leader>s :Ag<CR>
-" nnoremap <leader>s :Ggrep <cword> *<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <leader>j :call Journal()<CR>
 nnoremap <leader>n :call Notes()<CR>
