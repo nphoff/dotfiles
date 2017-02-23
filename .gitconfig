@@ -17,6 +17,7 @@
     d = diff --color-words
     rpull = pull --rebase --stat
     pullr = pull --rebase --stat
+    g = grep --break --heading --line-number
 
 [color]
     ui = true
