@@ -18,7 +18,7 @@ set backspace=indent,eol,start
 set encoding=utf-8                  " Default text encoding
 set autochdir                       " Automagically change directory to open file
 set noswapfile                      " Self explanatory, don't use swaps.
-set cursorline                      " Put a line under the current row...
+" set cursorline                      " Put a line under the current row...
 set mouse=a
 let g:netrw_liststyle=3             " netrw list style
 " take out the included files, it was taking too long
@@ -37,7 +37,7 @@ let mapleader = ","
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufReadPost *.jinja2 set filetype=html tabstop=2 shiftwidth=2
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
@@ -96,8 +96,16 @@ set foldlevelstart=20
 set foldnestmax=2
 
 " requires fzf to be installed on the system (highly recommended)
-noremap <leader>s :FZF ~/development/Etsyweb<CR>
-noremap <leader>e :FZF<CR>
+" set rtp (assumes linux, not mac, mac will use another install directory)
+set rtp+=~/.fzf
+noremap <Leader>e :Files ~/development/Etsyweb<CR>
+noremap <Leader>f :GFiles <CR>
+
+"" other plugins
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>c :TCommentBlock<CR>
+
+nnoremap <Leader>g :Goyo<CR>
 
 """ new things
 if v:version >= 704
