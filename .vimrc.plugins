@@ -25,6 +25,8 @@ Plugin 'urthbound/hound.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-rooter'
 "
 
  " All of your Plugins must be added before the following line
@@ -35,6 +37,7 @@ call plug#begin()
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/goyo.vim'
+Plug 'reewr/vim-monokai-phoenix'
 call plug#end()
 
 " allow fzf to find hidden files and ignore the tmp and git directories :D

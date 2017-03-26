@@ -23,7 +23,8 @@ set mouse=a
 let g:netrw_liststyle=3             " netrw list style
 " take out the included files, it was taking too long
 set complete=.,w,b,u,t
-colorscheme default
+set background=dark
+colorscheme solarized
 
 " Change shape of cursor in different modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical line in insert mode
@@ -98,8 +99,8 @@ set foldnestmax=2
 " requires fzf to be installed on the system (highly recommended)
 " set rtp (assumes linux, not mac, mac will use another install directory)
 set rtp+=~/.fzf
-noremap <Leader>e :Files ~/development/Etsyweb<CR>
-noremap <Leader>f :GFiles <CR>
+noremap <Leader>e :FZF ~/development/Etsyweb<CR>
+noremap <Leader>f :FZF <CR>
 
 "" other plugins
 nnoremap <Leader>o :CtrlP<CR>
