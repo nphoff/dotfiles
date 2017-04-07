@@ -18,6 +18,7 @@
     rpull = pull --rebase --stat
     pullr = pull --rebase --stat
     g = grep --break --heading --line-number
+    cp = cherry-pick
 
 [color]
     ui = true
