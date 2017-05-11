@@ -44,6 +44,9 @@ alias tmrm='tmux kill-session -t'
 alias tmat='tmux attach -t'
 alias tmn='tmux new -s'
 
+#git!
+alias git_delete_local_branches='g branch | grep -v master | xargs git branch -D'
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

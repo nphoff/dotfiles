@@ -74,6 +74,7 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
+nnoremap gb :ls<CR>:b<Space>
 noremap j gj
 noremap k gk
 noremap s <C-w>
@@ -85,8 +86,8 @@ noremap <C-a> ^
 noremap <C-e> $
 
 "" experimental settings for page nav
-noremap J <C-f>
-noremap K <C-b>
+noremap J <C-d>
+noremap K <C-u>
 
 
 """ folding
@@ -149,8 +150,8 @@ endfunction
 
 let g:notes = 1
 function Notes()
-    let filename = 'notes.md'
-    let path = '~/journal/'
+    let filename = 'journal.md'
+    let path = '~/notes/'
     if g:notes
         execute 'sp ' . path . filename
         let g:notes = 0
