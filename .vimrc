@@ -38,6 +38,7 @@ let mapleader = ","
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost journal.md set bg=light
 autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufReadPost *.jinja2 set filetype=html tabstop=2 shiftwidth=2
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>

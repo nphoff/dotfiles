@@ -45,6 +45,8 @@ let $FZF_DEFAULT_COMMAND='ag --ignore .git,tmp -g ""'
 
 "" goyo
 nnoremap <Leader>g :Goyo<CR>
+"" automatically get into Goyo mode when editing my journal
+autocmd BufNewFile,BufReadPost journal.md Goyo
 
 
 "" ctrlp
