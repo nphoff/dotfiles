@@ -15,7 +15,7 @@ if ! [ -e ~/.vim/autoload/plug.vim ]; then
 fi
 
 # copy over all the rc files
-for file in .tmux.conf .zshrc .vimrc.plugins .vimrc .xinitrc
+for file in .tmux.conf .zshrc .vimrc.plugins .vimrc .xinitrc .gitconfig
 do
 
 if [ -e ~/$file ]; then
