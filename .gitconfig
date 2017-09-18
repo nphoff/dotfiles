@@ -1,8 +1,8 @@
 [user]
-    #name = Nathan Hoffman
-    #email = hoffman.nathan89@gmail.com
     name = Nathan Hoffman
-    email = nhoffman@etsy.com
+    email = hoffman.nathan89@gmail.com
+    #name = Nathan Hoffman
+    #email = nhoffman@etsy.com
 
 [alias]
     st = status
