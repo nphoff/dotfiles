@@ -27,6 +27,7 @@ Plugin 'fatih/vim-go'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-rooter'
+Plugin 'moll/vim-node'
 "
 
  " All of your Plugins must be added before the following line
