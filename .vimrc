@@ -109,6 +109,9 @@ nnoremap <Leader>c :TCommentBlock<CR>
 
 nnoremap <Leader>g :Goyo<CR>
 
+"" ack.vim
+nnoremap <Leader>h :Ack! <cword><CR>
+
 """ new things
 if v:version >= 704
     set wildignorecase
