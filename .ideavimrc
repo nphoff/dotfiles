@@ -1,0 +1,21 @@
+set number                          " actually use line numbers
+set tabstop=2 
+set shiftwidth=2 
+set softtabstop=2                   " a tab is 4 spaces
+set autoindent
+set shiftround                      " Indent to nearest tabstop.
+set backspace=indent,eol,start
+
+set scrolloff=3
+
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+set relativenumber                  " count the relative line numbers from where you are
+
+nmap > >>
+nmap < <<
+
