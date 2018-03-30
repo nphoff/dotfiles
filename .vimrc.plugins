@@ -11,20 +11,17 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'ervandew/supertab'
+" webapi required for hound.vim
 Plugin 'mattn/webapi-vim'
 Plugin 'urthbound/hound.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-rooter'
 Plugin 'moll/vim-node'
@@ -39,7 +36,6 @@ call plug#begin()
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/goyo.vim'
-Plug 'reewr/vim-monokai-phoenix'
 call plug#end()
 
 " allow fzf to find hidden files and ignore the tmp and git directories :D
@@ -51,6 +47,22 @@ nnoremap <Leader>g :Goyo<CR>
 autocmd BufNewFile,BufReadPost journal.md set bg=light
 autocmd BufNewFile,BufReadPost journal.md Goyo
 
+" requires fzf to be installed on the system (highly recommended)
+" set rtp (assumes linux, not mac, mac will use another install directory)
+set rtp+=~/.fzf
+noremap <Leader>e :FZF <CR>
+noremap <Leader>f :FZF <CR>
+
+"" other plugins
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>c :TCommentBlock<CR>
+
+nnoremap <Leader>g :Goyo<CR>
+
+"" Hound.vim (<3)
+nnoremap <Leader>h :Hound <C-R><C-W><CR>
+
+let g:hound_vertical_split = 1
 
 "" ctrlp
 let g:ctrlp_max_depth = 40

@@ -1,5 +1,8 @@
 set nocompatible                    " choose no compatibility with legacy vi
 
+" Leader
+let mapleader = ","
+
 " All of my plugins are here.
 if filereadable($HOME . "/.vimrc.plugins")
     source ~/.vimrc.plugins
@@ -32,14 +35,17 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 
 set scrolloff=3
 
-" Leader
-let mapleader = ","
 
 "autocmd FileType php,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.tpl set filetype=html tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufReadPost *.jinja2 set filetype=html tabstop=2 shiftwidth=2
+
+" Autocmd for working with alluvium's js
+autocmd Filetype javascript set ts=2 sw=2 sts=2 et
+
+" Take off highlights with escape twice
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 "" Searching
@@ -89,44 +95,12 @@ noremap <C-e> $
 noremap J <C-d>
 noremap K <C-u>
 
-
-""" folding
-set foldenable
-set foldmethod=syntax
-"set foldmethod=indent "testing for a bit
-set foldlevelstart=20
-set foldnestmax=2
-
-" requires fzf to be installed on the system (highly recommended)
-" set rtp (assumes linux, not mac, mac will use another install directory)
-set rtp+=~/.fzf
-noremap <Leader>e :FZF ~/development/Etsyweb<CR>
-noremap <Leader>f :FZF <CR>
-
-"" other plugins
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>c :TCommentBlock<CR>
-
-nnoremap <Leader>g :Goyo<CR>
-
-"" ack.vim
-nnoremap <Leader>h :Ack! <cword><CR>
-
 """ new things
 if v:version >= 704
     set wildignorecase
     set relativenumber                  " count the relative line numbers from where you are
 endif
 
-let javaScript_fold=1         " JavaScript
-"let perl_fold=1               " Perl
-"let php_folding=1             " PHP
-"let r_syntax_folding=1        " R
-"let ruby_fold=1               " Ruby
-"let sh_fold_enabled=1         " sh
-"let vimsyn_folding='af'       " Vim script
-"let xml_syntax_folding=1      " XML
-"
 """ netrw settings
 let g:netrw_altv          = 1
 let g:netrw_fastbrowse    = 2
