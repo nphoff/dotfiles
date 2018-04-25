@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bling/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/webapi-vim'
 Plug 'urthbound/hound.vim'
 
@@ -55,6 +56,10 @@ set scrolloff=3
 set wildignorecase
 set relativenumber                  " count the relative line numbers from where you are
 set noswapfile                      " Self explanatory, don't use swaps.
+
+" Color scheme
+colorscheme solarized
+set background=dark
 
 " auto commands
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
