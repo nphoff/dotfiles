@@ -7,13 +7,19 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bling/vim-airline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
 Plug 'urthbound/hound.vim'
+Plug 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-Plug 'pangloss/vim-javascript'
-Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+
+" want to use eventually but not now. Plug 'jpalardy/vim-slime'
 
 " End plugins!
 call plug#end()
@@ -38,6 +44,10 @@ let $FZF_DEFAULT_COMMAND='ag --ignore .git,tmp -g ""'
 noremap <Leader>e :FZF <CR>
 noremap <Leader>f :FZF <CR>
 
+" vim-slime things
+" let g:slime_target = "tmux"
+" let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":.2"}
+
 " Regular vim stuff
 syntax enable                       " Turn on syntax highlighting
 set title                           " Change the terminal's title (?)
@@ -57,6 +67,10 @@ set wildignorecase
 set relativenumber                  " count the relative line numbers from where you are
 set noswapfile                      " Self explanatory, don't use swaps.
 
+set undodir=~/.vim/undodir
+set undofile
+set clipboard=unnamed
+
 " Color scheme
 colorscheme solarized
 set background=dark
@@ -65,6 +79,15 @@ set background=dark
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd Filetype javascript set ts=2 sw=2 sts=2 et
+autocmd Filetype python set bg=light
+
+" highlight bad words
+highlight badWords ctermbg=red ctermfg=white
+fun! HiBadWords()
+match badWords /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+endfun
+autocmd InsertEnter *.md call HiBadWords()
+autocmd InsertLeave *.md call HiBadWords()
 
 nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
