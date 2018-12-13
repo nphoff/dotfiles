@@ -9,10 +9,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
-Plug 'urthbound/hound.vim'
-Plug 'w0rp/ale'
+Plug 'nphoff/hound.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+" Might use later if I can find a good config for mailchimp 
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -36,6 +39,10 @@ let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
 "" Hound.vim (<3)
 nnoremap <Leader>h :Hound <C-R><C-W><CR>
 let g:hound_vertical_split = 1
+let g:hound_port = "443"
+
+let g:hound_preserve_repo_case = 1
+
 
 " fzf default things
 set rtp+=~/.fzf
@@ -66,6 +73,7 @@ set scrolloff=3
 set wildignorecase
 set relativenumber                  " count the relative line numbers from where you are
 set noswapfile                      " Self explanatory, don't use swaps.
+set mouse=a                         " enable the mouse for all modes. :D
 
 set undodir=~/.vim/undodir
 set undofile
@@ -79,7 +87,8 @@ set background=dark
 autocmd BufWritePre *.php,*.js,*.jsx :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd Filetype javascript set ts=2 sw=2 sts=2 et
-autocmd Filetype python set bg=light
+autocmd Filetype php set ts=4 sw=2 sts=2 et
+au BufRead,BufNewFile Vagrantfile setfiletype ruby
 
 " highlight bad words
 highlight badWords ctermbg=red ctermfg=white
@@ -116,3 +125,20 @@ noremap s <C-w>
 nmap > >>
 nmap < <<
 set pastetoggle=<leader>p
+
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+"" netrw
+""let g:netrw_liststyle = 3
+
+"" Cursor stuff
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+

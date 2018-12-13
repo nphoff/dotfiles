@@ -44,6 +44,9 @@ alias tmrm='tmux kill-session -t'
 alias tmat='tmux attach -t'
 alias tmn='tmux new -s'
 
+# term stuff (for tmux characters)
+export TERM=xterm-256color
+
 #git!
 alias git_delete_local_branches='g branch | grep -v master | xargs git branch -D'
 
