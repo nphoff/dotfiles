@@ -86,10 +86,6 @@ autocmd BufNewFile,BufReadPost *.txt set cmdheight=1
 autocmd Filetype javascript set ts=2 sw=2 sts=2 et
 autocmd Filetype php set ts=4 sw=4 sts=4 et
 autocmd Filetype php set includeexpr=substitute(v:fname,'[\_]','/','g').'.php'
-autocmd Filetype php set path+=/Volumes/casesensitive/mailchimp/app/controllers/
-autocmd Filetype php set path+=/Volumes/casesensitive/mailchimp/app/lib/
-autocmd Filetype php set path+=/Volumes/casesensitive/mailchimp/app/models/
-autocmd Filetype php set path+=/Volumes/casesensitive/mailchimp/vendor/rsg/avesta/src/
 au BufRead,BufNewFile Vagrantfile setfiletype ruby
 
 " highlight bad words
@@ -278,6 +274,12 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " END CoC
+" source local file
+try 
+  source ~/.config/nvim/local.vim
+catch
+  " No such file? No problem; just ignore it.
+endtry
 
 " optional reset cursor on start:
 augroup myCmds
