@@ -1,0 +1,17 @@
+# /Users/nhoffman/.config/tmuxinator/mc.yml
+
+name: mc
+root: ~/
+
+windows:
+  - journal: nvim ~/mailchimp-notes/journal.md
+  - mailchimp:
+      root: ~/Projects/mailchimp
+      layout: main-vertical
+      panes:
+        -
+        - script/setup
+  - houndd:
+      root: ~/Projects/hound
+      panes:
+        - houndd
